@@ -20,4 +20,13 @@ RSpec.feature "Users can create new posts" do
     title = "Sandrine - Posts - Admin"
     expect(page).to have_title title
   end
+
+  scenario "when providing invalid attributes" do
+    fill_in "Name", with: ""
+    click_button "Poster"
+
+    expect(page).to have_content "Post non effectué"
+    expect(page).to have_content "Name can't be blank"
+  end
+
 end

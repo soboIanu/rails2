@@ -13,7 +13,8 @@ class PostsController < ApplicationController
       flash[:notice] = "Post effectué"
       redirect_to @post
     else
-      #jeej
+      flash.now[:alert] = "Post non effectué"
+      render "new"
     end
   end
 
