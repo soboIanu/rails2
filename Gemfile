@@ -41,6 +41,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem "rspec-rails"
   gem "factory_girl_rails"
+  gem "bootstrap-sass"
+  gem "font-awesome-rails"
+  gem "simple_form"
 end
 
 group :development do

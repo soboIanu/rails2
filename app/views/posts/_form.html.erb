@@ -1,28 +1,7 @@
-<%= form_for(post) do |f| %>
-  <% if post.errors.any? %>
-    <div id="error explanation">
-      <h2><%= pluralize(post.errors.count, "error") %>
-        prohibited this post from being saved:</h2>
+<%= simple_form_for(post) do |f| %>
+    <%= f.input :name, :label => "Titre" %>
+    <%= f.input :description %>
+    <%= f.input :content, :label => "Contenu" %>
 
-        <ul>
-          <% post.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :content %>
-    <%= f.text_field :content %>
-  </p>
-
-  <%= f.submit "Poster" %>
+  <%= f.button :submit, "Poster", class: "btn-primary" %>
 <% end %>

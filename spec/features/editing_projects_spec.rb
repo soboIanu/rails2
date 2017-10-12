@@ -10,9 +10,9 @@ RSpec.feature "Users can edit existing projects" do
   end
 
   scenario "with valid attributes" do
-    fill_in "Name", with: "Sandrine"
+    fill_in "Titre", with: "Sandrine"
     fill_in "Description", with: "Avocate"
-    fill_in "Content", with: "Boxeuse"
+    fill_in "Contenu", with: "Boxeuse"
     click_button "Poster"
 
     expect(page).to have_content "Post mis à jour"
@@ -20,7 +20,7 @@ RSpec.feature "Users can edit existing projects" do
   end
 
   scenario "with invalid attributes" do
-    fill_in "Name", with: ""
+    fill_in "Titre", with: ""
     click_button "Poster"
 
     expect(page).to have_content "Post non mis à jour"
