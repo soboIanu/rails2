@@ -13,5 +13,11 @@ RSpec.feature "Users can create new posts" do
     click_button "Poster"
 
     expect(page).to have_content "Post effectué"
+
+    post = Post.find_by(name: "Sandrine")
+    expect(page.current_url).to eq post_url(post)
+
+    title = "Sandrine - Posts - Admin"
+    expect(page).to have_title title
   end
 end
